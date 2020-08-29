@@ -23,7 +23,7 @@
 </head>
   <body>
     <div  class="container p-5">
-    <form class="form-signin" action="home.html">
+    
      
       
       <div class="container">
@@ -44,27 +44,28 @@
               <img class="logo" src="pago.png" alt="logo de la empresa" style="width: 45%">
             </div>
             <div class="card-body">
-              <form>
+              
                 <div class="input-group form-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Email" required autofocus style="max-width: 300px;">
+                  
+                  <input id='mail' type="email" class="form-control" placeholder="Email" required autofocus style="max-width: 300px;">
                   
                 </div>
                 <div class="input-group form-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Contraseña" required autofocus style="max-width: 300px;">
+                  <input id='pass' type="password" class="form-control" placeholder="Contraseña" required autofocus style="max-width: 300px;">
                 </div>
                 <div class="row align-items-center remember">
                   <input type="checkbox">Recordar
                 </div>
                 <div class="form-group">
-                  <input type="submit" value="Entrar" class="btn float-right login_btn">
+                  <input id='entrar' onclick="validar()"  value="Entrar" class="btn float-right login_btn">
                 </div>
-              </form>
+              
             </div>
             <img src="footer.jpg" alt="footer de la página" style="width: 100%">
         </div>
@@ -74,5 +75,7 @@
         <script src="jquery-3.5.1.min.js"></script>
       </footer>
 </div>
+<script src="js/login.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>
