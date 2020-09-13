@@ -34,7 +34,7 @@ function sortProducts(criterio, array) {
                     return -1;
                 }
 
-                if (a.products < b.products) {
+                if (a.cost < b.cost) {
                     return 1;
                 }
 
@@ -89,7 +89,7 @@ function showProductsList(array){
 
             
             htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
+            <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">

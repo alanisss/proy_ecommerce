@@ -23,18 +23,90 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id= 'infouser' style = "display: none">
-        <a id='user' class="py-2 d-none d-md-inline-block mr-5" href="#" style = "color: #db3262"> </a>
+      <div id='infouser' style="display: none">
+        <a id='user' class="py-2 d-none d-md-inline-block mr-5" href="#" style="color: #db3262"> </a>
         <a id='salir' class="py-2 d-md-inline-block" href="#">Salir</a>
       </div>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+    <div id="listProduct">
+
+    </div>
+    <div id="commentProducts">
+
+    </div>
+    <div id="nuevoComentario" style="display:none;">
+      <h4>Dejanos tu comentario:</h4>
+      <textarea cols="60" rows="8" id="comentario"></textarea>
+      <br>
+      <button class="btn btn-outline-dark pull-right" id="sendComment">Enviar</button>
+      <div class="pull-right">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <style>
+          .star-rating {
+            padding-right: 10px;
+            direction: rtl;
+            display: inline-block;
+            
+
+          }
+
+          .star-rating input[type=radio] {
+            display: none
+          }
+
+          .star-rating label {
+            color: rgb(133, 142, 192);
+            font-size: 30px;
+           
+            cursor: pointer;
+          }
+
+          .star-rating label:hover,
+          .star-rating label:hover~label,
+          .star-rating input[type=radio]:checked~label {
+            color: #ffbf00
+          }
+          
+            
+          
+        </style>
+
+        <div class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5" />
+          <label for="star-5" title="5 stars">
+            <i class="active fa fa-star"></i>
+          </label>
+
+          <input id="star-4" type="radio" name="rating" value="4" />
+          <label for="star-4" title="4 stars">
+            <i class="active fa fa-star"></i>
+          </label>
+
+          <input id="star-3" type="radio" name="rating" value="3" />
+          <label for="star-3" title="3 stars">
+            <i class="active fa fa-star"></i>
+          </label>
+
+          <input id="star-2" type="radio" name="rating" value="2" />
+          <label for="star-2" title="2 stars">
+            <i class="active fa fa-star"></i>
+          </label>
+
+          <input id="star-1" type="radio" name="rating" value="1" checked />
+          <label for="star-1" title="1 star">
+            <i class="active fa fa-star"></i>
+          </label>
+
+        </div>
+
+      </div>
+
+
+
+
     </div>
   </div>
   <footer class="text-muted">
