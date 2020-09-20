@@ -17,15 +17,23 @@
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio </a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <div id= 'infouser' style = "display: none">
-          <a id='user' class="py-2 d-none d-md-inline-block mr-5" href="#" style = "color: #db3262"> </a>
-          <a id='salir' class="py-2 d-md-inline-block" href="#">Salir</a>
-        </div>
+        
+        <div id= 'infouser' style = "display: none" class="btn-group">
+        
+            <button id="user" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="my-profile.html">Ver mi perfil</a>
+              <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+              <div class="dropdown-divider"></div>
+              <a id="salir" class="dropdown-item" href="#">Cerrar sesión</a>
+            </div>
+           </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
