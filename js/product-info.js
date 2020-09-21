@@ -32,8 +32,7 @@ function showProduct(product, comentariosArray) {
   info += `
     <div class="container mt-5">
     <div class="text-center p-4">
-      <h2>Descripción del producto</h2>
-      <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+      
       
     </div>
     <h3>${product.name}</h3>
@@ -53,15 +52,21 @@ function showProduct(product, comentariosArray) {
       <dd>
         <p>${product.soldCount}</p>
       </dd>
-
-      <dt>Imágenes ilustrativas</dt>
+     
+      
       <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+      
+      <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
         </div>
       </dd>
     </dl>
-    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-  </div>
+    
+    
+  
+    </div>
+    <br><br>
+    <h3 class="titleGallery">Productos relacionados</h3>
+    <hr>
   `;
   comentariosArray.forEach(function (comment) {
     let puntos = "";
@@ -87,13 +92,13 @@ function showImagesGallery(array) {
 
   let htmlContentToAppend = "";
 
-  for (let i = 0; i < 1 ; i++) {
+  for (let i = 0; i < 1; i++) {
     let imageSrc = array[i];
 
     htmlContentToAppend += `
      
-       
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    
+        <div id="carouselExampleIndicators" class="carousel slide gallery" data-ride="carousel" data-interval="5000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
