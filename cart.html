@@ -40,28 +40,64 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
-      <div id= 'infouser' style = "display: none" class="btn-group">
-      
-          <button id="user" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Action
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="my-profile.html">Ver mi perfil</a>
-            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-            <div class="dropdown-divider"></div>
-            <a id="salir" class="dropdown-item" href="#">Cerrar sesión</a>
-          </div>
-         </div>
+
+      <div id='infouser' style="display: none" class="btn-group">
+
+        <button id="user" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Action
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="my-profile.html">Ver mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <div class="dropdown-divider"></div>
+          <a id="salir" class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
+
+
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Artículo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col"></th>
+            <th scope="col">Costo</th>
+          </tr>
+        </thead>
+        <tbody id="TD"></tbody>
+        <tfoot>
+          <tr>
+            
+            <td colspan="4"> Costo total</td>
+            <td id="sumaTotal"></td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
+    <hr>
+    <br>
+    <div>
+      <h3>Tipo de envío</h3>
+      <br>
+      <input id="prem" name="entrega" type="radio" value="15" checked="" required="">
+      <label for="prem">Premium (2 - 5 días) + 15% del Subtotal</label>
+      <br>
+      <input id="exp" name="entrega" type="radio" value="7"  required="">
+      <label for="exp">Express (5 - 8 días) + 7% del Subtotal</label>
+      <br>
+      <input id="stand" name="entrega" type="radio" value="5"  required="">
+      <label for="stand">Standard (12 - 15 días) + 5% del Subtotal</label>
+    </div>
+
+  </div>
+
+
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
