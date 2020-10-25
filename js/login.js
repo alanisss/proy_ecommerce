@@ -24,6 +24,8 @@ window.location = 'home.html';
 });
 });
 */
+
+//Validación de login, si están todos los campos llenos, me lleva a la ventana de home.html, sino va a salir un alert hasta que se completen ambos campos
 function validar() {
     let contEmail = document.getElementById("mail").value;
     let contPasswd = document.getElementById("pass").value;
