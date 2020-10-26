@@ -107,20 +107,20 @@ function modoPago() {
 
 
 //Agrega o quita check formulario
-st.addEventListener("input", function(e){
+st.addEventListener("input", function (e) {
     validar("st")
 });
-numero.addEventListener("input", function(e){
+numero.addEventListener("input", function (e) {
     validar("numero")
 });
-esq.addEventListener("input", function(e){
+esq.addEventListener("input", function (e) {
     validar("esq")
 });
 
-pais.addEventListener("input", function(e){
+pais.addEventListener("input", function (e) {
     validar("pais")
 });
-function validar (campo) {
+function validar(campo) {
 
     if (campo === "st") {
         if (st.value.trim() === "") {
@@ -133,8 +133,8 @@ function validar (campo) {
         } else {
             if (st.classList.contains("is-invalid") === true) {
                 st.classList.remove("is-invalid");
-                
-            }st.classList.add("is-valid");
+
+            } st.classList.add("is-valid");
 
         }
     }
@@ -150,12 +150,12 @@ function validar (campo) {
         } else {
             if (numero.classList.contains("is-invalid") === true) {
                 numero.classList.remove("is-invalid");
-                
-            }numero.classList.add("is-valid");
+
+            } numero.classList.add("is-valid");
 
         }
     }
-  
+
     if (campo === "esq") {
         if (esq.value.trim() === "") {
             if (esq.classList.contains("is-valid") === true) {
@@ -167,8 +167,8 @@ function validar (campo) {
         } else {
             if (esq.classList.contains("is-invalid") === true) {
                 esq.classList.remove("is-invalid");
-                
-            }esq.classList.add("is-valid");
+
+            } esq.classList.add("is-valid");
 
         }
     }
@@ -184,8 +184,8 @@ function validar (campo) {
         } else {
             if (pais.classList.contains("is-invalid") === true) {
                 pais.classList.remove("is-invalid");
-                
-            }pais.classList.add("is-valid");
+
+            } pais.classList.add("is-valid");
 
         }
     }
@@ -193,29 +193,29 @@ function validar (campo) {
 
 
 //Agrega o quita check del modal 
-tarjeta.addEventListener("input", function(e){
+tarjeta.addEventListener("input", function (e) {
     validarTarjeta("tarjeta");
-}); 
+});
 
 
-cuentabanco.addEventListener("input", function(e){
+cuentabanco.addEventListener("input", function (e) {
     validarTarjeta("cuentabanco");
-}); 
+});
 
 
-titular.addEventListener("input", function(e){
+titular.addEventListener("input", function (e) {
     validarTarjeta("titular");
-});    
+});
 
 
-cvc.addEventListener("input", function(e){
-validarTarjeta("cvc");
-}); 
+cvc.addEventListener("input", function (e) {
+    validarTarjeta("cvc");
+});
 
 function validarTarjeta(campoModal) {
 
 
-   
+
     if (campoModal === "tarjeta") {
         if (tarjeta.value.trim() === "") {
             if (tarjeta.classList.contains("is-valid") === true) {
@@ -227,12 +227,12 @@ function validarTarjeta(campoModal) {
         } else {
             if (tarjeta.classList.contains("is-invalid") === true) {
                 tarjeta.classList.remove("is-invalid");
-                
-            }tarjeta.classList.add("is-valid");
+
+            } tarjeta.classList.add("is-valid");
 
         }
     }
-    
+
     if (campoModal === "cuentabanco") {
         if (cuentabanco.value.trim() === "") {
             if (cuentabanco.classList.contains("is-valid") === true) {
@@ -244,8 +244,8 @@ function validarTarjeta(campoModal) {
         } else {
             if (cuentabanco.classList.contains("is-invalid") === true) {
                 cuentabanco.classList.remove("is-invalid");
-                
-            }cuentabanco.classList.add("is-valid");
+
+            } cuentabanco.classList.add("is-valid");
 
         }
     }
@@ -260,8 +260,8 @@ function validarTarjeta(campoModal) {
         } else {
             if (titular.classList.contains("is-invalid") === true) {
                 titular.classList.remove("is-invalid");
-               
-            }titular.classList.add("is-valid");
+
+            } titular.classList.add("is-valid");
 
         }
     }
@@ -277,45 +277,70 @@ function validarTarjeta(campoModal) {
         } else {
             if (cvc.classList.contains("is-invalid") === true) {
                 cvc.classList.remove("is-invalid");
-                
-            }cvc.classList.add("is-valid");
+
+            } cvc.classList.add("is-valid");
 
         }
     }
-   
+
 }
-document.getElementById("compra").addEventListener("click", function(){
+document.getElementById("compra").addEventListener("click", function () {
     rezongarKawaii();
-        });
-function rezongarKawaii(){
-    var campovacio=false; 
-if(document.getElementById("credito").checked === true){
-    if(tarjeta.value === ""){
-        campovacio = "Número de tarjeta";
-        
+});
+function rezongarKawaii() {
+    var campovacio = false;
+    if (document.getElementById("credito").checked === true) {
+        if (tarjeta.value === "") {
+            campovacio = "Número de tarjeta";
+
+        }
+        if (titular.value === "") {
+            campovacio = "Nombre de titular";
+
+        }
+        if (cvc.value === "") {
+            campovacio = "CVC";
+
+        }
+    } else {
+        if (cuentabanco.value === "") {
+            campovacio = "Número de cuenta";
+
+        }
+    } if (campovacio === false) {
+        alert("COMPRA APROBADA!");
+    } else {
+        alert("El campo " + campovacio + " está vacío");
     }
-    if(titular.value ===""){
-        campovacio = "Nombre de titular";
-           
-    }
-    if(cvc.value ===""){
-        campovacio = "CVC";
-           
-    }
-}else{
-    if(cuentabanco.value === ""){
-        campovacio = "Número de cuenta";
-        
-    }
-}if(campovacio === false){
-    alert("COMPRA APROBADA!");
-}else{
-    alert ("El campo " + campovacio + " está vacío");
 }
 
-}
+document.getElementById("botoncito").addEventListener("click", function () {
+    rezongarForm();
+});
+function rezongarForm() {
+    var vacio = false;
+    if (st.value === "") {
+        vacio = "Calle";
 
-document.getElementById("")
+    }
+    if (esq.value === "") {
+        vacio = "Esquina";
+
+    }
+    if (pais.value === "") {
+        vacio = "País";
+
+    }
+    if (numero.value === "") {
+        vacio = "Número";
+
+    }
+     if (vacio === false) {
+        alert("Puede continuar");
+    } else {
+        alert("El campo " + vacio + " está vacío");
+    }
+}
 //Trae el JSON de los artículos del carrito
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData("https://japdevdep.github.io/ecommerce-api/cart/654.json").then(function (resultObj) {
@@ -325,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             costoEnvio();
         }
     });
-   
-  
+
+
 });
 
