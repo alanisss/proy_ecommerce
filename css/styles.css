@@ -139,3 +139,8 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#imgProf {
+display: flex;
+justify-content: center;
+}

@@ -89,6 +89,7 @@ function showProductsList(array){
 
             
             htmlContentToAppend += `
+            <div class="col-md-6">
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
@@ -103,6 +104,7 @@ function showProductsList(array){
                     </div>
                 </div>
             </a>
+            </div>
             `
         }
         }

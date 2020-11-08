@@ -12,6 +12,8 @@ let tarjeta = document.getElementById("numTarjeta")
 let cuentabanco = document.getElementById("numCuenta")
 let titular = document.getElementById("titularTarjeta")
 let cvc = document.getElementById("cvc")
+
+
 //Función de costo total
 function CostoTotal() {
     let total = 0;
@@ -30,6 +32,7 @@ function SubtotalC(unitCost, i) {
     document.getElementById(`sumaSubtotal${i}`).innerHTML = subTot
 
     CostoTotal();
+    costoEnvio();
 }
 
 //Función que convierte los pesos Uruguayos en dólares
@@ -67,6 +70,7 @@ function showArticles(atributos) {
     CostoTotal();
 }
 
+//Función que calcula el costo de envío
 function costoEnvio() {
     let sumaTotal = parseInt(document.getElementById("sumaTotal").innerHTML);
     let env;
@@ -91,6 +95,7 @@ function costoEnvio() {
     document.getElementById("totalEnvio").innerHTML = content;
 }
 
+//Función que te deja seleccionar el tipo de pago que quiere el usuario
 function modoPago() {
     var pagos = document.getElementsByName("metodo");
     for (var i = 0; i < pagos.length; i++) {
@@ -287,6 +292,8 @@ function validarTarjeta(campoModal) {
 document.getElementById("compra").addEventListener("click", function () {
     rezongarKawaii();
 });
+
+//Función que te envía un alert dependiendo de la validación
 function rezongarKawaii() {
     var campovacio = false;
     if (document.getElementById("credito").checked === true) {
